@@ -7,7 +7,7 @@ domain   = 'example.com'
 ip       = '192.168.0.42'
 ram      = '256'
 
-Vagrant.configure(2) do |config|
+Vagrant.configure(4) do |config|
   config.vm.box = 'hashicorp/precise32'
   config.vm.host_name = hostname + '.' + domain
   config.vm.network :hostonly, ip
