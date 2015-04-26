@@ -2,20 +2,16 @@
 #
 # Single box with Apache and sample static site installed via Puppet.
 #
-hostname = 'myprecisebox'
-domain   = 'example.com'
-ip       = '192.168.0.42'
-ram      = '256'
 
-Vagrant.configure(4) do |config|
+Vagrant.configure(2) do |config|
   config.vm.box = 'hashicorp/precise32'
-  config.vm.host_name = hostname + '.' + domain
-  config.vm.network :hostonly, ip
+  config.vm.host_name = 'myprecisebox' + '.' + 'example.com'
+  config.vm.network :hostonly, '192.168.0.42'
 
   config.vm.customize [
     'modifyvm', :id,
     '--name', hostname,
-    '--memory', ram
+    '--memory', '256'
   ]
 
   config.vm.provision :puppet do |puppet|
