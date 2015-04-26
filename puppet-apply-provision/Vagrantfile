@@ -3,7 +3,7 @@
 # Single box with Apache and sample static site installed via Puppet.
 #
 
-Vagrant.configure(2) do |config|
+Vagrant.configure("2") do |config|
   config.vm.box = 'hashicorp/precise32'
   config.vm.host_name = 'myprecisebox' + '.' + 'example.com'
   config.vm.network :hostonly, '192.168.0.42'
