@@ -15,4 +15,4 @@ File {
   mode  => '0644',
 }
 
-include baseconfig, tomcat
+include baseconfig, stdlib, tomcat
