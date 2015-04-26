@@ -5,16 +5,10 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = 'hashicorp/precise32'
-  config.vm.host_name = 'myprecisebox' + '.' + 'example.com'
-  config.vm.network :hostonly, '192.168.0.42'
+  config.vm.host_name = 'myprecisebox.example.com'
+  config.vm.network "hostonly", '192.168.0.42'
 
-  config.vm.customize [
-    'modifyvm', :id,
-    '--name', hostname,
-    '--memory', '256'
-  ]
-
-  config.vm.provision :puppet do |puppet|
+  config.vm.provision "puppet" do |puppet|
     puppet.manifests_path = 'puppet/manifests'
     puppet.manifest_file = 'site.pp'
     puppet.module_path = 'puppet/modules'
