@@ -60,4 +60,7 @@ class tomcat (
       ensure => present,
     }
   }
+  class {'::tomcat::install': } ->
+  class {'::tomcat::user': } ->
+  Class['tomcat']
 }
