@@ -21,7 +21,7 @@ define tomcat::instance (
   $catalina_home          = undef,
   $catalina_base          = undef,
   $install_from_source    = $::tomcat::install_from_source,
-  $source_url             = undef,
+  $source_url             = 'http://mirror.nexcess.net/apache/tomcat/tomcat-8/v8.0.8/bin/apache-tomcat-8.0.8.tar.gz',
   $source_strip_first_dir = undef,
   $package_ensure         = undef,
   $package_name           = undef,
