@@ -61,6 +61,6 @@ class tomcat (
     }
   }
   class {'::tomcat::instance': } ->
-  class {'::tomcat::server': } ->
+  class {'::tomcat::service': } ->
   Class['tomcat']
 }
