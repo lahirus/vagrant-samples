@@ -26,6 +26,7 @@ class tomcat(
   $package_name    = "apache-tomcat-${tomcat_version}"
   $service_code    = 'apache-tomcat'
   $tomcat_home     = "${target}/${package_name}"
+  $java_home	   = "/opt/jdk1.7.0_79"
 
   tag($service_code)
 
@@ -73,7 +74,7 @@ class tomcat(
     'Start tomcat':
       path        => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
       cwd         => "${tomcat_home}/bin",
-      environment => 'JAVA_HOME="/opt/jdk1.7.0_79"',
+      environment => 'JAVA_HOME="$java_home"',
       command     => 'bash startup.sh',
       logoutput   => 'on_failure',
       require     => Exec['Set tomcat home permission'];
