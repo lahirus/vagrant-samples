@@ -1,10 +1,16 @@
 # vagrant-samples
 
-This includes different samples tried out using vagrant
+This includes different samples tried out using vagrant.
 
-First add the base image for Vagrant,
+Install Vagrant and VirtualBox.
+
+Add the base image for Vagrant,
 
 $ vagrant box add hashicorp/precise32
+
+Then nevigate to the sample directories and run,
+
+$vagrant up
 
 Reference
 
